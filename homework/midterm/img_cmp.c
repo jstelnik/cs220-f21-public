@@ -57,9 +57,8 @@ int main(int argc, char **argv) {
 	if (im1->cols != im2->cols || im1->rows != im2->rows) {
 		free_image(&im1);
 		free_image(&im2);
-		fclose(fp1);
-		fclose(fp2);
 		printf("Image dimensions differ\n");
+		return 1;
 	}
 
 	// Count the number of pixels containing color component values

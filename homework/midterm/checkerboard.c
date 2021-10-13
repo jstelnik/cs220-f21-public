@@ -29,7 +29,7 @@ int main(int argc, char **argv) {
   const char *filename = argc > 1 ? argv[1] : "checkerboard.ppm";
 	const int num_cols = argc > 2 ? atoi(argv[2]) : 7;
   const int num_rows = argc > 3 ? atoi(argv[3]) : 5;
-	const int square_size = argc > 4 ? atoi(argv[3]) : 50;
+	const int square_size = argc > 4 ? atoi(argv[4]) : 50;
 
   // open a ppm file as binary to write
 	FILE *fp = fopen(filename, "wb");
