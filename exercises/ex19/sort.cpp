@@ -42,6 +42,6 @@ int main( void )
 
 void sort( std::vector< int > *values )
 {
-  // PART 6 TO DO: Copy your implementation of the sort function from ex8-1 here
+  // PART 6 TO DO: Copy your implementation of the sort function from ex18 here
 }
 
