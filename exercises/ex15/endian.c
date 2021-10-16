@@ -11,7 +11,7 @@ int main(void) {
   printf("sizeof(unsigned int) = %zd\n", sizeof(unsigned int));
   printf("sizeof(unsigned long) = %zd\n", sizeof(unsigned long));
 
-/*
+
   // uncomment this part, then use gdb to determine whether
   // the value in the "val" variable is stored as big endian
   // or little endian
@@ -19,7 +19,7 @@ int main(void) {
 
   unsigned int *p = &val;
   printf("%u\n", *p);
-*/
+
 
   return 0;
 }
