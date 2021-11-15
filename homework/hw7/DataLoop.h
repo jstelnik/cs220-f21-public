@@ -55,8 +55,6 @@ public:
    */
   ~DataLoop();
 
-  // NOT REQUIRED FOR ASSIGNMENT
-  void clear();  // clear the loop (helper for destructor & others)
   
   /**
    * \brief Overloaded operator== to check if two DataLoops are the same
