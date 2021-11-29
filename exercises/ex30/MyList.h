@@ -31,17 +31,40 @@ class MyList {
   
   iterator(MyNode<T>* initial) : ptr(initial) { }
 
-    // iterator& operator++() { ... }
+    iterator& operator++()
+    {
 
-    // bool operator!=(const iterator& o) const { ... }
+    }
 
-    // T& operator*() { ... }
+    bool operator!=(const iterator& o) const
+    {
+      if(*initial != o)
+      {
+        return true;
+      }
+      return false;
+    }
+
+    T& operator*() 
+    {
+
+    }
 
   };
 
-  // iterator begin() { ... }
+  iterator begin()
+  {
+    return MyNode<T> *head;
+  }
 
-  // iterator end() { ... }
+  iterator end()
+  {
+    while(MyNode<T>* initial != nullptr)
+    {
+      initial = initial->next;
+    }
+    return *initial;
+  }
     
 
   /*-------------------------------------------------*/
