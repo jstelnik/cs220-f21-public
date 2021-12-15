@@ -62,11 +62,12 @@ int main() {
 
   //PART 3 TO DO:  fill in code here to populate counters before it gets output
 
-  
-  
+  string word;
+  while(cin >> word)
+  {
+    counters[word] += 1;
+  }
 
-
-  
   // Loop through the map and print contents, making use of the iterator
   // it to successively point to each entry in the map in turn.
   // We use it->first and it->second to get current key and value.
@@ -86,21 +87,25 @@ int main() {
   //Note that this map has int keys and values which are vectors of strings.
   map<int, vector<string> > words_by_freq;
 
-
-
-
-
-
-
-
+  for (map<string, int>::const_iterator it = counters.cbegin();
+       it != counters.cend();
+       ++it) {
+    words_by_freq[it->second].push_back(it->first);
+  }
   
   // PART 5 TO DO: write code here to output the contents of the
   // words_by_freq map, arranged by frequency.
 
-
-  
-
-  
+  cout << endl;
+  for (map<int, vector<string>>::const_iterator it = words_by_freq.cbegin();
+       it != words_by_freq.cend();
+       ++it) {
+    cout << "Frequency: " << it->first << endl;
+    for(int i = 0; i < it->second.size(); i++)
+    {
+      cout << it->second[i] << endl;
+    }
+  }
 
   return 0;
 }
