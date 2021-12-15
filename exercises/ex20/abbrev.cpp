@@ -28,6 +28,19 @@ string abbreviate(string word) {
     bool cur_is_vowel = is_vowel(word[i]);
 
     // TODO: finish coding this loop to complete the function
+    if(cur_is_vowel)
+    {
+      if(!last_was_vowel)
+      {
+        result += '\'';
+      }
+      last_was_vowel = true;
+    }
+    else
+    {
+      result += word[i];
+      last_was_vowel = false;
+    }
   }
 
   return result;
@@ -42,6 +55,19 @@ int main(int argc, char **argv) {
   }
 
   // TODO: implement the primary functionality here
+  ifstream ifile(argv[1]);
+  ofstream ofile(argv[2]);
+  if(!ifile.is_open())
+  {
+    cerr << "Couldn't open input file" << endl;
+    return 1;
+  }
+  std::string word;
+  while(ifile >> word)
+  {
+    ofile << abbreviate(word) << ' ';
+  }
+  ofile << endl;
 
   return 0;
 }

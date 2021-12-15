@@ -19,6 +19,33 @@ int main() {
   
   // TODO: implement statements to get input, determine and count the token types
 
+  while(cin >> token)
+  {
+    std::stringstream ss1(token);
+    std::stringstream ss2(token);
+
+    int i;
+    double d;
+    string s;
+
+    if(ss1 >> i)
+    {
+      if(!(ss1 >> s))
+      {
+        sum_i += i;
+      }
+    }
+  if(!(ss1 >> i) && ss2 >> d)
+    {
+      sum_fp += d;
+    }
+    else
+    {
+    ntok++;
+    ntok_c += (int)token.size();
+    }
+  }
+
   cout << "Floating point sum: " << sum_fp << endl;
   cout << "Integer sum: " << sum_i << endl;
   cout << "Number of non-numeric tokens: " << ntok << endl;
