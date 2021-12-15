@@ -27,22 +27,27 @@ int main() {
     int i;
     double d;
     string s;
+    bool hasInt = false;;
 
     if(ss1 >> i)
     {
       if(!(ss1 >> s))
       {
         sum_i += i;
+        hasInt = true;
       }
     }
-  if(!(ss1 >> i) && ss2 >> d)
+    if(!hasInt)
     {
-      sum_fp += d;
-    }
-    else
-    {
-    ntok++;
-    ntok_c += (int)token.size();
+      if(ss2 >> d)
+      {
+        sum_fp += d;
+      }
+      else
+      {
+        ntok++;
+        ntok_c += (int)token.size();
+      }
     }
   }
 

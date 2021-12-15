@@ -62,12 +62,18 @@ int main(int argc, char **argv) {
     cerr << "Couldn't open input file" << endl;
     return 1;
   }
-  std::string word;
-  while(ifile >> word)
+
+  std::string line;
+  while(getline(ifile, line))
   {
-    ofile << abbreviate(word) << ' ';
+    stringstream ss(line);
+    std::string word;
+    while(ss >> word)
+    {
+      ofile << abbreviate(word) << ' ';
+    }
+    ofile << endl;
   }
-  ofile << endl;
 
   return 0;
 }
