@@ -7,6 +7,8 @@
 
 std::vector< double >::const_iterator naive_find_last_iterator( std::vector< double >::const_iterator begin , std::vector< double >::const_iterator end , double v );
 std::vector< double >::const_iterator  fast_find_last_iterator( std::vector< double >::const_iterator begin , std::vector< double >::const_iterator end , double v );
+void make_cumulative(std::vector<double> &hist);
+
 
 // PART 2 TODO: Declare a function called "make_cumulative" that converts a std::vector< double > from a probability density function to a cumulative distribution function.
 
@@ -90,17 +92,47 @@ int main( void )
 }
 
 // PART 2 TODO: Define a function that converts a std::vector< double > from a probability density function to a cumulative distribution function.
+void make_cumulative(std::vector<double> &hist)
+{
+  for(size_t i = 1; i < hist.size(); i++)
+  {
+    hist[i] += hist[i - 1];
+  }
+}
 
 std::vector< double >::const_iterator naive_find_last_iterator( std::vector< double >::const_iterator begin , std::vector< double >::const_iterator end , double v )
 {
   // PART 4 TODO: Implement the function returning the iterator with the property that value of v is between the indexed entry and the next one
-  return end;
+  std::vector<double>::const_iterator iter = begin;
+  for( ; iter != end; iter++)
+  {
+    if(((*iter) < v) && (iter + 1 == end || *(iter + 1) > v))
+    {
+      return iter;
+    }
+  }
+  return iter;
 }
 
 std::vector< double >::const_iterator fast_find_last_iterator( std::vector< double >::const_iterator begin , std::vector< double >::const_iterator end , double v )
 {
   // PART 5 TODO: Implement the function returning the iterator with the property that value of v is between the indexed entry and the next one
-  return end;
+  if(end - begin == 1)
+  {
+    return begin;
+  }
+  else
+  {
+    std::vector<double>::const_iterator mid = begin + (end - begin) / 2;
+    if((*mid) > v)
+    {
+      return fast_find_last_iterator(begin, mid, v);
+    }
+    else
+    {
+      return fast_find_last_iterator(mid, end, v);
+    }
+  }
 }
 
 
