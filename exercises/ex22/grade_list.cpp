@@ -34,3 +34,20 @@ double GradeList::percentile(double percentile) {
   }
   return grades[select];
 }
+
+double GradeList::mean(void)
+{
+  double sum = 0;
+  double count = 0;
+  for(size_t i = 0; i < grades.size(); i++)
+  {
+    count++;
+    sum += grades[i];
+  }
+  return sum / count;
+}
+
+double GradeList::median(void)
+{
+  return grades[grades.size() / 2];
+}
