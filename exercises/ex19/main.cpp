@@ -96,12 +96,11 @@ int main() {
   // PART 5 TO DO: write code here to output the contents of the
   // words_by_freq map, arranged by frequency.
 
-  cout << endl;
   for (map<int, vector<string>>::const_iterator it = words_by_freq.cbegin();
        it != words_by_freq.cend();
        ++it) {
     cout << "Frequency: " << it->first << endl;
-    for(int i = 0; i < it->second.size(); i++)
+    for(size_t i = 0; i < it->second.size(); i++)
     {
       cout << it->second[i] << endl;
     }

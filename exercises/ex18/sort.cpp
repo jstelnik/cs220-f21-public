@@ -24,24 +24,12 @@ int main( void )
     vec[i] = rand();
   }
 
-  for(size_t i = 0; i < vec.size(); i++)
-  {
-    std::cout << vec[i] << " ";
-  }
-  std:: cout << std::endl;
-
   sort(&vec);
 
   for(size_t i = 1; i < vec.size(); i++)
   {
       assert(vec[i-1] <= vec[i]);
   }
-
-  for(size_t i = 0; i < vec.size(); i++)
-  {
-    std::cout << vec[i] << " ";
-  }
-  std:: cout << std::endl;
 
   return 0;
 }
