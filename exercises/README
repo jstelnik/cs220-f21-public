@@ -3,3 +3,4 @@ ex19: file I/O, vector, map, sort (STL library), iterators
 ex20: istream, ostream, string manipulation, stringstream to extract data
 ex21: const_iterators, dynamically-allocated memory, CONFUSING
 ex22: C++ classes, fied & member functions, access modifiers (public, private)
+ex23: ^same as ex22, dynamic memory allocation, alternate constructors. destructors

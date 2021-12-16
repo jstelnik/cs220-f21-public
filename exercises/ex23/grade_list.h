@@ -35,6 +35,9 @@ class GradeList {
   // See main1.cpp for sample usage.
   GradeList(int capacity);
 
+  //destructor
+  ~GradeList();
+
   // TODO: define this in grade_list.cpp. If the array is full,
   // resize it by doubling it's length. Do not use realloc!
   void add(double grade);
@@ -57,7 +60,23 @@ class GradeList {
 
   // TODO: write begin and end functions to mimic an iterator
   // using actual pointers
+  double *begin()
+  {
+    if(grades != NULL)
+    {
+      return &grades[0];
+    }
+  }
 
+  double *end()
+  {
+    if(grades != NULL)
+    {
+      return &grades[count];
+    }
+  }
+
+  GradeList();
 
 private:
 
