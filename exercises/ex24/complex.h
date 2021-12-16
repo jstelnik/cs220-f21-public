@@ -5,7 +5,7 @@
 /**
  * Operator overloading
  *
- * This exercise practises operator overloading by implementing 
+ * This exercise practices operator overloading by implementing 
  * a Complex number class. You will be writting all the necessary
  * operator overloading to make the class works perfectly.
  *
@@ -32,6 +32,7 @@ class Complex {
     // Part 2
     // TODO: Implement and overload operator<< with friend to print out a complex number
     // For example std::cout << c << std::endl; should print out something like a + bi
+    friend std::ostream& operator<<(std::ostream& os, const Complex& rhs);
 
     // Part 3
     // TODO: write a copy constructor

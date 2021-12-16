@@ -6,13 +6,10 @@ int main() {
   Complex b(1, 2);
 
   // Uncomment after finishing part 2
-  /*
   std::cout << a << " (expected: 0 + 0i)" << std::endl;
   std::cout << b << " (expected: 1 + 2i)" << std::endl;
-  */
   
   // Uncomment after finishing part 3
-  /*
   Complex c = a;
   Complex d;
   d = b;
@@ -29,7 +26,6 @@ int main() {
   std::cout << h << " (expected 4 + 8i)" << std::endl;
   Complex i = b / d;
   std::cout << i << " (expected 1 + 0i)"<< std::endl; 
-  */
   
   // Uncomment after finishing part 4
   /*
