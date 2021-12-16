@@ -58,6 +58,7 @@ class Complex {
 
     // Part 4
     // TODO: non-member function operator overload for float times complex using friend
+    Complex operator*(const float& lhs, const Complex& rhs);
 
   private:
     float rel, img; // real and imaginary part of a complex number

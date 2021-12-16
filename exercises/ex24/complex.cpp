@@ -65,5 +65,7 @@ Complex Complex::operator/(const Complex& rhs)
 
 //// things to be added for part 4 ////
 // TODO: times operator for float times complex
-
-
+Complex operator*(const float& lhs, const Complex& rhs)
+{
+    return Complex(lhs * rhs.rel, lhs * rhs.img);
+}
